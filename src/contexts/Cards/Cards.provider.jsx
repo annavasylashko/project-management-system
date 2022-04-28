@@ -1,7 +1,15 @@
+import PropTypes from "prop-types";
 import React, { useEffect, useMemo, useState } from "react";
 
 import { getCards } from "../../shared/utils/requests";
 import CardsContext from "./Cards.context";
+
+const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ]).isRequired,
+};
 
 const CardsProvider = ({ children }) => {
   const [shouldGetCards, setShouldGetCards] = useState(true);
@@ -21,5 +29,7 @@ const CardsProvider = ({ children }) => {
     <CardsContext.Provider value={value}>{children}</CardsContext.Provider>
   );
 };
+
+CardsProvider.propTypes = propTypes;
 
 export default CardsProvider;

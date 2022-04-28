@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -7,6 +8,10 @@ import navigationItemSelector from "./NavigationItem.selector";
 import Icon from "../../Icon/Icon";
 
 import styles from "./NavigationItem.module.scss";
+
+const propTypes = {
+  task: PropTypes.object.isRequired,
+};
 
 const NavigationItem = ({ task }) => {
   const { location } = useSelector(navigationItemSelector);
@@ -24,5 +29,7 @@ const NavigationItem = ({ task }) => {
     </Link>
   );
 };
+
+NavigationItem.propTypes = propTypes;
 
 export default NavigationItem;

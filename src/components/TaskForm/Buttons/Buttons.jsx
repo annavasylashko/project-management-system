@@ -1,8 +1,19 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import Icon from "../../Icon/Icon";
 
 import styles from "./Buttons.module.scss";
+
+const propTypes = {
+  isEdited: PropTypes.bool,
+  submitHandler: PropTypes.func.isRequired,
+  deleteHandler: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+  isEdited: false,
+};
 
 const Buttons = ({ submitHandler, deleteHandler, isEdited }) => (
   <div className={styles["new-note-btns"]}>
@@ -19,5 +30,8 @@ const Buttons = ({ submitHandler, deleteHandler, isEdited }) => (
     </button>
   </div>
 );
+
+Buttons.propTypes = propTypes;
+Buttons.defaultProps = defaultProps;
 
 export default Buttons;

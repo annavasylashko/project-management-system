@@ -1,6 +1,15 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import styles from "./UserHeader.module.scss";
+
+const propTypes = {
+  title: PropTypes.string,
+};
+
+const defaultProps = {
+  title: "",
+};
 
 const UserHeader = ({ title }) => {
   const username = window.localStorage.getItem("username");
@@ -17,5 +26,8 @@ const UserHeader = ({ title }) => {
     </div>
   );
 };
+
+UserHeader.propTypes = propTypes;
+UserHeader.defaultProps = defaultProps;
 
 export default UserHeader;

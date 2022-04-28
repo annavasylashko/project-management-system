@@ -1,6 +1,15 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import styles from "./Info.module.scss";
+
+const propTypes = {
+  isLogin: PropTypes.bool,
+};
+
+const defaultProps = {
+  isLogin: false,
+};
 
 const Info = ({ isLogin }) => (
   <>
@@ -12,5 +21,8 @@ const Info = ({ isLogin }) => (
     {isLogin && <p className={styles.welcome}>Welcome back!</p>}
   </>
 );
+
+Info.propTypes = propTypes;
+Info.defaultProps = defaultProps;
 
 export default Info;

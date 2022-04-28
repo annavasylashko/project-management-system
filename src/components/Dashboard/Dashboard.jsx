@@ -1,9 +1,19 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import List from "../List/List";
 import { useCardsContext } from "../../contexts/Cards/Cards.context";
 
 import styles from "./Dashboard.module.scss";
+
+const propTypes = {
+  showHeader: PropTypes.bool,
+  sections: PropTypes.array.isRequired,
+};
+
+const defaultProps = {
+  showHeader: false,
+};
 
 const Dashboard = ({ showHeader, sections }) => {
   const { cards } = useCardsContext();
@@ -31,5 +41,8 @@ const Dashboard = ({ showHeader, sections }) => {
     </div>
   );
 };
+
+Dashboard.propTypes = propTypes;
+Dashboard.defaultProps = defaultProps;
 
 export default Dashboard;

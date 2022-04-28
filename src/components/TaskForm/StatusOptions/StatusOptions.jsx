@@ -1,8 +1,18 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import { tasksMap } from "../../../configs/tasks";
 
 import styles from "./StatusOptions.module.scss";
+
+const propTypes = {
+  selectedStatus: PropTypes.string,
+  handler: PropTypes.func.isRequired,
+};
+
+const defaultProps = {
+  selectedStatus: "",
+};
 
 const StatusOptions = ({ selectedStatus, handler }) => {
   return (
@@ -28,5 +38,8 @@ const StatusOptions = ({ selectedStatus, handler }) => {
     </div>
   );
 };
+
+StatusOptions.propTypes = propTypes;
+StatusOptions.defaultProps = defaultProps;
 
 export default StatusOptions;

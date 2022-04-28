@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 import Buttons from "./Buttons/Buttons";
@@ -10,6 +11,15 @@ import {
 import { useCardsContext } from "../../contexts/Cards/Cards.context";
 
 import styles from "./TaskForm.module.scss";
+
+const propTypes = {
+  onClose: PropTypes.func.isRequired,
+  taskToEdit: PropTypes.bool,
+};
+
+const defaultProps = {
+  taskToEdit: false,
+};
 
 const TaskForm = ({ onClose, taskToEdit }) => {
   const { setShouldGetCards } = useCardsContext();
@@ -113,5 +123,8 @@ const TaskForm = ({ onClose, taskToEdit }) => {
     </>
   );
 };
+
+TaskForm.propTypes = propTypes;
+TaskForm.defaultProps = defaultProps;
 
 export default TaskForm;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 
 import AddTask from "../../components/AddTask/AddTask";
@@ -9,6 +10,15 @@ import { tasksMap } from "../../configs/tasks";
 import CardsProvider from "../../contexts/Cards/Cards.provider";
 
 import styles from "./ContentPage.module.scss";
+
+const propTypes = {
+  showHeader: PropTypes.bool,
+  title: PropTypes.string.isRequired,
+};
+
+const defaultProps = {
+  showHeader: false,
+};
 
 const ContentPage = ({ showHeader, title }) => {
   const { updateLocationPath } = useBehavior(contentPageBehavior);
@@ -31,5 +41,8 @@ const ContentPage = ({ showHeader, title }) => {
     </CardsProvider>
   );
 };
+
+ContentPage.propTypes = propTypes;
+ContentPage.defaultProps = defaultProps;
 
 export default ContentPage;

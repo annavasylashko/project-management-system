@@ -1,8 +1,17 @@
+import PropTypes from "prop-types";
 import React, { useCallback, useState, useMemo } from "react";
 
 import { login, register } from "../../../shared/utils/requests";
 
 import styles from "./AuthForm.module.scss";
+
+const propTypes = {
+  isLogin: PropTypes.bool,
+};
+
+const defaultProps = {
+  isLogin: false,
+};
 
 const AuthForm = ({ isLogin }) => {
   const initialInputs = useMemo(
@@ -79,5 +88,8 @@ const AuthForm = ({ isLogin }) => {
     </>
   );
 };
+
+AuthForm.propTypes = propTypes;
+AuthForm.defaultProps = defaultProps;
 
 export default AuthForm;

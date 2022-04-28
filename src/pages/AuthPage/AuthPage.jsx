@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+import PropTypes from "prop-types";
 import React from "react";
 
 import SignUpLink from "./SignUpLink/SignUpLink";
@@ -6,6 +8,10 @@ import Info from "./Info/Info";
 import { AUTH_TYPES } from "../../configs/auth";
 
 import styles from "./AuthPage.module.scss";
+
+const propTypes = {
+  type: PropTypes.oneOf([AUTH_TYPES.LOGIN, AUTH_TYPES.REGISTER]).isRequired,
+};
 
 const AuthPage = ({ type }) => {
   const isLogin = type === AUTH_TYPES.LOGIN;
@@ -25,5 +31,7 @@ const AuthPage = ({ type }) => {
     </div>
   );
 };
+
+AuthPage.propTypes = propTypes;
 
 export default AuthPage;

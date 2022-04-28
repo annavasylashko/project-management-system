@@ -1,9 +1,17 @@
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import React, { useCallback, useState } from "react";
 
 import TaskForm from "../TaskForm/TaskForm";
 
 import styles from "./Card.module.scss";
+
+const propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 const Card = ({ id, title, status, description }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -40,5 +48,7 @@ const Card = ({ id, title, status, description }) => {
     </>
   );
 };
+
+Card.propTypes = propTypes;
 
 export default Card;
