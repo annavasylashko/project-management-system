@@ -22,12 +22,18 @@ const defaultProps = {
 
 const ContentPage = ({ showHeader, title }) => {
   const { updateLocationPath } = useBehavior(contentPageBehavior);
+  const isUserLoggedIn = localStorage.getItem('token');
 
   useEffect(() => {
     updateLocationPath(window.location.pathname);
   }, [updateLocationPath, window.location.pathname]);
 
   const filteredSections = tasksMap.filter((task) => task.title === title);
+
+  if (!isUserLoggedIn) {
+    window.location.href = "/login";
+  }
+
   return (
     <CardsProvider>
       <div className={styles["main-section"]}>
