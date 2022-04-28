@@ -22,7 +22,7 @@ const defaultProps = {
 
 const ContentPage = ({ showHeader, title }) => {
   const { updateLocationPath } = useBehavior(contentPageBehavior);
-  const isUserLoggedIn = localStorage.getItem('token');
+  const isUserLoggedIn = localStorage.getItem("token");
 
   useEffect(() => {
     updateLocationPath(window.location.pathname);

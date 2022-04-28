@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "eslint **/*.js **/*.jsx --ignore-pattern node_modules/",
+    "lint": "eslint **/*.jsx --ignore-pattern node_modules/",
     "format": "npx prettier --write .",
     "build": "react-scripts build",
     "test": "react-scripts test",
