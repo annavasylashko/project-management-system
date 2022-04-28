@@ -1,0 +1,91 @@
+.card {
+  width: 200px;
+  height: fit-content;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  background: #ffffff;
+  border-radius: 30px;
+
+  &-content {
+    width: 180px;
+    margin: 12px 12px 0 0;
+
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.11em;
+    color: #4a4a4a;
+
+    word-break: break-word;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-name {
+    width: fit-content;
+    min-height: 17px;
+    height: fit-content;
+    padding: 4px 11px;
+    margin: auto 0;
+
+    word-break: break-word;
+
+    border-radius: 10px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+  }
+
+  &-options {
+    outline: none;
+    border: none;
+    background: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 20px;
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-dot {
+      width: 3.95px;
+      height: 3.95px;
+
+      border-radius: 50%;
+      background: #d4ebff;
+    }
+  }
+}
+
+.status {
+  &-to_do {
+    color: #d7385e;
+    background-color: #ffe1e8;
+  }
+
+  &-in_progress {
+    color: #ff9345;
+    background-color: #ffe6d4;
+  }
+
+  &-testing {
+    color: #ffb800;
+    background-color: #fef8d7;
+  }
+
+  &-done {
+    color: #37d050;
+    background-color: #daffd4;
+  }
+}

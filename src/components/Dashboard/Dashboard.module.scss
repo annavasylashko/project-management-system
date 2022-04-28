@@ -1,0 +1,44 @@
+.dashboard-content {
+  display: flex;
+  justify-content: space-between;
+
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+
+    &-track {
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    &-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        background: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+.task-type-section {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+
+  &-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #555a5f;
+
+    margin-bottom: 15px;
+  }
+}

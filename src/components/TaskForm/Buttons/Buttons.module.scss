@@ -1,0 +1,64 @@
+.new-note-btns {
+  display: flex;
+}
+
+.new-note-btns * {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  height: 35px;
+}
+
+.submit-new-task {
+  outline: none;
+  border: none;
+  background: none;
+
+  width: 60%;
+  padding: 6px 11px;
+  margin: auto 0;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #d4ebff;
+
+  color: #45a6ff;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.new-task-close {
+  outline: none;
+  border: none;
+  background: none;
+
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 5px 10px;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #ffe1e8;
+
+  color: #e07a74;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & img {
+    height: 23px;
+  }
+
+  & p {
+    margin: 4px 0;
+  }
+}

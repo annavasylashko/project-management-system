@@ -1,0 +1,33 @@
+.list-container {
+  width: calc(100vw - 270px);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+
+    &-track {
+      border-radius: 10px;
+      background: transparent;
+    }
+
+    &-thumb {
+      border-radius: 10px;
+      background: transparent;
+    }
+  }
+}
+
+.dashboard-list {
+  height: 330px;
+  width: fit-content;
+
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0;
+}

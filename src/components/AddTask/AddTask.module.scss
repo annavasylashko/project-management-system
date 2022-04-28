@@ -1,0 +1,25 @@
+.add-task-section {
+  display: flex;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #666a6d;
+
+  margin-top: 0;
+}
+
+.add-task-button {
+  outline: none;
+  border: none;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 28px;
+    margin: auto;
+  }
+}

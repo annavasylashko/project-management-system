@@ -1,0 +1,12 @@
+.icon {
+  width: 32;
+  height: 31px;
+  margin: auto 12px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+  }
+}

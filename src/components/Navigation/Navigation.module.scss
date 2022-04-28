@@ -1,0 +1,35 @@
+.body {
+  background-color: #52575d;
+}
+
+.navigation {
+  margin: 1vh auto;
+  padding: 10px;
+  padding-right: 0;
+
+  width: fit-content;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  text-align: center;
+}
+
+.items {
+  height: fit-content;
+}
+
+.logo {
+  margin: 0;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 55px;
+  color: #f8eea8;
+}
