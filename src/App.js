@@ -15,7 +15,7 @@ function App() {
   const isNavigationVisible = CONTENT_ROUTES.includes(window.location.pathname);
 
   return (
-    <Router basename="https://annavasylashko.github.io/project-management-system/">
+    <Router>
       <div
         className={classNames(styles.container, {
           [styles["with-navigation"]]: isNavigationVisible,
