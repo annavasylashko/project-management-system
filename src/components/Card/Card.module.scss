@@ -1,11 +1,13 @@
+@import '../../styles/colors.module.scss';
+
 .card {
   width: 200px;
   height: fit-content;
   padding: 20px;
   margin-bottom: 20px;
 
-  background: #ffffff;
-  border-radius: 30px;
+  background: $surface_primary;
+  border-radius: 15px;
 
   &-content {
     width: 180px;
@@ -15,7 +17,7 @@
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.11em;
-    color: #4a4a4a;
+    color: $font_primary;
 
     word-break: break-word;
   }
@@ -63,29 +65,29 @@
       height: 3.95px;
 
       border-radius: 50%;
-      background: #d4ebff;
+      background: $content_blue_light;
     }
   }
 }
 
 .status {
   &-to_do {
-    color: #d7385e;
-    background-color: #ffe1e8;
+    color: $content_red;
+    background-color: $content_red_light;
   }
 
   &-in_progress {
-    color: #ff9345;
-    background-color: #ffe6d4;
+    color: $content_orange;
+    background-color: $content_orange_light;
   }
 
   &-testing {
-    color: #ffb800;
-    background-color: #fef8d7;
+    color: $content_yellow;
+    background-color: $content_yellow_light;
   }
 
   &-done {
-    color: #37d050;
-    background-color: #daffd4;
+    color: $content_green;
+    background-color: $content_green_light;
   }
 }

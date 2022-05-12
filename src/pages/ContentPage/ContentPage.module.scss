@@ -1,3 +1,5 @@
+@import '../../styles/colors.module.scss';
+
 .main-section {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   margin: 15px;
   padding: 0 18px;
 
-  background: #f2f3f9f2;
+  background: $surface_primary3;
   border-radius: 25px;
 
   width: calc(100vw - 260px);

@@ -1,4 +1,6 @@
+@import '../../../styles/colors.module.scss';
+
 .sign-up-link a {
   text-decoration: none;
-  color: #45a6ff;
+  color: $content_blue;
 }

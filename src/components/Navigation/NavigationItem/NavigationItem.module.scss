@@ -1,3 +1,7 @@
+@import '../../../styles/colors.module.scss';
+
+$nav_interaction: #ffffff1a;
+
 .link {
   display: flex;
   text-decoration: none;
@@ -7,7 +11,7 @@
   border-radius: 14px;
   margin-bottom: 15px;
 
-  color: #c4c4c4;
+  color: $font_secondary2;
 
   -webkit-user-drag: none;
 
@@ -16,15 +20,15 @@
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: $nav_interaction;
+    color: $surface_primary;
     cursor: pointer;
   }
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: $nav_interaction;
+  color: $surface_primary;
 }
 
 .task-img {

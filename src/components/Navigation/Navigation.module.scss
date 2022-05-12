@@ -1,5 +1,7 @@
+@import '../../styles/colors.module.scss';
+
 .body {
-  background-color: #52575d;
+  background-color: $surface_secondary;
 }
 
 .navigation {
@@ -31,5 +33,5 @@
   font-weight: 600;
   font-size: 40px;
   line-height: 55px;
-  color: #f8eea8;
+  color: $logo;
 }

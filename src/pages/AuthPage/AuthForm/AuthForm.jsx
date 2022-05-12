@@ -57,6 +57,9 @@ const AuthForm = ({ isLogin }) => {
     [inputs, isLogin, initialInputs]
   );
 
+  /* eslint-disable-next-line max-len */
+  const passwordTitle = '\u26A1	Your password must be more than 8 characters long, should contain uppercase, lowercase, numeric and special character.'
+
   return (
     <>
       <p className={styles["form-name"]}>
@@ -81,6 +84,11 @@ const AuthForm = ({ isLogin }) => {
           onChange={inputHandler}
           autoComplete="current-password"
         />
+        {!isLogin && (
+          <p className={styles.tips}>
+            {passwordTitle}
+          </p>)
+        }
         <button type="submit" className={styles["submit-button"]}>
           {isLogin ? "Log in" : "Sign up"}
         </button>

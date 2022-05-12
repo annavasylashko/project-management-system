@@ -1,10 +1,12 @@
+@import '../../styles/colors.module.scss';
+
 .blocker {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(95, 95, 95, 0.3);
+  background-color: $surface_blocker;
 }
 
 .new-task {
@@ -20,7 +22,7 @@
   width: 350px;
   height: fit-content;
 
-  background: #ffffff;
+  background: $surface_primary;
   border-radius: 35px;
 
   padding: 25px 30px;
@@ -43,15 +45,15 @@
   outline: none;
   resize: none;
 
-  background: rgba(242, 243, 249, 0.95);
-  border: 1px solid #c4c4c4;
+  background: $surface_primary3;
+  border: 1px solid $font_secondary2;
   box-sizing: border-box;
   border-radius: 10px;
 
   font-size: 18px;
-  color: #707478;
+  color: $font_secondary3;
 
   &::placeholder {
-    color: #c4c4c4;
+    color: $font_secondary2;
   }
 }
