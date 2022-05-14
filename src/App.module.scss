@@ -4,6 +4,10 @@
   display: flex;
   height: 100vh;
   background-color: $surface_primary2;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .with-navigation {
