@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .list-container {
   width: calc(100vw - 270px);
 
@@ -10,16 +12,6 @@
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
-
-    &-track {
-      border-radius: 10px;
-      background: transparent;
-    }
-
-    &-thumb {
-      border-radius: 10px;
-      background: transparent;
-    }
   }
 }
 

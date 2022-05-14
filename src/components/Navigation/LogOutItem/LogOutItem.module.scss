@@ -1,9 +1,11 @@
+@import '../../../styles/variables.scss';
+
 .icon {
   width: 32;
   height: 31px;
   margin: auto 12px;
   padding-bottom: 5px;
-  border-radius: 8px;
+  border-radius: $small_radius;
 
   &:hover {
     cursor: pointer;

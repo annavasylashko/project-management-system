@@ -1,4 +1,5 @@
-@import '../../../styles/colors.module.scss';
+@import '../../../styles/colors.scss';
+@import '../../../styles/variables.scss';
 
 .form-name {
   font-size: 30px;
@@ -28,7 +29,7 @@
   background: $surface_primary3;
   border: 1px solid $font_secondary2;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: $base_radius;
 
   font-size: 18px;
   line-height: 33px;
@@ -56,7 +57,7 @@
   background: $font_secondary;
   border: 1px solid $surface_primary2;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: $base_radius;
 
   font-size: 23px;
 
