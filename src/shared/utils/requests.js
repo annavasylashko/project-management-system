@@ -14,7 +14,7 @@ export const login = (user) =>
       window.localStorage.setItem("username", body.user.username);
       window.location.href = "/";
     })
-    .catch((err) => console.log(err));
+    .catch(() => alert('Invalid username or password'));
 
 export const register = (user) =>
   fetch(`${baseUrl}/auth/local/register`, {
@@ -30,7 +30,7 @@ export const register = (user) =>
       window.localStorage.setItem("username", body.user.username);
       window.location.href = "/";
     })
-    .catch((err) => console.log(err));
+    .catch(() => alert('Invalid username or password'));
 
 export const getCards = () =>
   fetch(`${baseUrl}/cards`, {
@@ -60,7 +60,7 @@ export const createCard = (data) =>
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch(() => alert('Invalid card data'));
 
 export const updateCard = (data) =>
   fetch(`${baseUrl}/cards/${data.id}`, {
@@ -77,7 +77,7 @@ export const updateCard = (data) =>
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch(() => alert('Invalid card data'));
 
 export const deleteCard = (id) =>
   fetch(`${baseUrl}/cards/${id}`, {

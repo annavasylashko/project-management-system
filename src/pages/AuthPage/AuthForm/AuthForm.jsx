@@ -4,7 +4,7 @@ import React, { useCallback, useMemo } from "react";
 import Input from "../../../components/Input/Input";
 import { useInputHandlers } from "../../../shared/hooks/useInputHandler";
 import { login, register } from "../../../shared/utils/requests";
-
+import { loginTips, passwordTips } from "./AuthForm.constants";
 import styles from "./AuthForm.module.scss";
 
 const propTypes = {
@@ -48,9 +48,6 @@ const AuthForm = ({ isLogin }) => {
     [inputs, isLogin, initialInputs]
   );
 
-  /* eslint-disable-next-line max-len */
-  const passwordTitle = '\u26A1	Your password must be more than 8 characters long, should contain uppercase, lowercase, numeric and special character.'
-
   return (
     <>
       <p className={styles["form-name"]}>
@@ -65,6 +62,11 @@ const AuthForm = ({ isLogin }) => {
           inputHandler={inputHandler}
           autoComplete="current-username"
         />
+        {!isLogin && (
+          <p className={styles.tips}>
+            {loginTips}
+          </p>)
+        }
         <Input
           name="password"
           className={styles.password}
@@ -76,7 +78,7 @@ const AuthForm = ({ isLogin }) => {
         />
         {!isLogin && (
           <p className={styles.tips}>
-            {passwordTitle}
+            {passwordTips}
           </p>)
         }
         <button type="submit" className={styles["submit-button"]}>
