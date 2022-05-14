@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useCallback, useMemo } from "react";
 
-import Input from "../../../components/Input/Input";
 import { useInputHandlers } from "../../../shared/hooks/useInputHandler";
 import { login, register } from "../../../shared/utils/requests";
 import { loginTips, passwordTips } from "./AuthForm.constants";
@@ -54,33 +53,26 @@ const AuthForm = ({ isLogin }) => {
         {isLogin ? "Log in to continue" : "Start right now!"}
       </p>
       <form onSubmit={onSubmit} className={styles.form}>
-        <Input
+        <input
           name="username"
           className={styles.username}
+          type="text"
           placeholder="Enter your username"
           value={inputs.username.value}
-          inputHandler={inputHandler}
+          onChange={inputHandler}
           autoComplete="current-username"
         />
-        {!isLogin && (
-          <p className={styles.tips}>
-            {loginTips}
-          </p>)
-        }
-        <Input
+        {!isLogin && <p className={styles.tips}>{loginTips}</p>}
+        <input
           name="password"
           className={styles.password}
           type="password"
           placeholder="Enter your password"
           value={inputs.password.value}
-          inputHandler={inputHandler}
+          onChange={inputHandler}
           autoComplete="current-password"
         />
-        {!isLogin && (
-          <p className={styles.tips}>
-            {passwordTips}
-          </p>)
-        }
+        {!isLogin && <p className={styles.tips}>{passwordTips}</p>}
         <button type="submit" className={styles["submit-button"]}>
           {isLogin ? "Log in" : "Sign up"}
         </button>

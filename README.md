@@ -1,4 +1,5 @@
 # Project management system
+
 :bar_chart:**Projecto** is a web-based application used as a visual work management tool.
 
 Users can create their task boards with different columns and move the tasks between them.<br/>
@@ -9,7 +10,9 @@ The greatest advantage of this application is it's suitability for personal usag
 #### Try it youself - [link to aplication](http://project-management-system-phi.vercel.app/)
 
 ## Usage
+
 In this section it is explained how user can interact with application
+
 <table>
   <tr>
     <td><b>Dashboard</b></td>
@@ -33,4 +36,5 @@ In this section it is explained how user can interact with application
 </table>
 
 ## Notes
+
 [REST API service](https://github.com/pavlovskyive/edu_dis_proj) used in application and it's documentation.

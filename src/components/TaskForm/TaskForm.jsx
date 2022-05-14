@@ -3,7 +3,6 @@ import React, { useMemo } from "react";
 
 import Buttons from "./Buttons/Buttons";
 import StatusOptions from "./StatusOptions/StatusOptions";
-import Input from "../Input/Input";
 import { useInputHandlers } from "../../shared/hooks/useInputHandler";
 import {
   createCard,
@@ -61,16 +60,16 @@ const TaskForm = ({ onClose, taskToEdit }) => {
     e.preventDefault();
     isTaskEdited
       ? updateCard({
-        id: taskToEdit.id,
-        title: inputs["task-title"].value,
-        status: inputs["status-option"].value,
-        description: inputs.description.value,
-      })
+          id: taskToEdit.id,
+          title: inputs["task-title"].value,
+          status: inputs["status-option"].value,
+          description: inputs.description.value,
+        })
       : createCard({
-        title: inputs["task-title"].value,
-        status: inputs["status-option"].value,
-        description: inputs.description.value,
-      });
+          title: inputs["task-title"].value,
+          status: inputs["status-option"].value,
+          description: inputs.description.value,
+        });
     handlers();
   };
 
@@ -88,11 +87,12 @@ const TaskForm = ({ onClose, taskToEdit }) => {
         onClick={onClose}
       />
       <form action="#" className={styles["new-task"]}>
-        <Input
+        <input
           name="task-title"
+          type="text"
           className={styles["new-task-name"]}
           placeholder="Add new task"
-          inputHandler={inputHandler}
+          onChange={inputHandler}
           value={inputs["task-title"].value}
         />
         <textarea
