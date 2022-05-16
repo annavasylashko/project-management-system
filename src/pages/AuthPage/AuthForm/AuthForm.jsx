@@ -1,20 +1,25 @@
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import React, { useCallback, useMemo } from "react";
 
+import { VIEW_MODES } from "../../../features/viewMode/viewMode.constants";
 import { useInputHandlers } from "../../../shared/hooks/useInputHandler";
 import { login, register } from "../../../shared/utils/requests";
+
 import { loginTips, passwordTips } from "./AuthForm.constants";
+
 import styles from "./AuthForm.module.scss";
 
 const propTypes = {
   isLogin: PropTypes.bool,
+  isWideView: PropTypes.oneOf([VIEW_MODES.SIMPLE, VIEW_MODES.WIDE]).isRequired,
 };
 
 const defaultProps = {
   isLogin: false,
 };
 
-const AuthForm = ({ isLogin }) => {
+const AuthForm = ({ isLogin, isWideView }) => {
   const initialInputs = useMemo(
     () => ({
       username: {
@@ -48,7 +53,11 @@ const AuthForm = ({ isLogin }) => {
   );
 
   return (
-    <>
+    <div
+      className={classNames(styles["form-container"], {
+        [styles["form-container-wide"]]: isWideView,
+      })}
+    >
       <p className={styles["form-name"]}>
         {isLogin ? "Log in to continue" : "Start right now!"}
       </p>
@@ -77,7 +86,7 @@ const AuthForm = ({ isLogin }) => {
           {isLogin ? "Log in" : "Sign up"}
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
