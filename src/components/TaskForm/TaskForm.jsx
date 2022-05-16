@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import React, { useMemo } from "react";
 
 import Buttons from "./Buttons/Buttons";
 import StatusOptions from "./StatusOptions/StatusOptions";
+import { useViewModeContext } from "../../contexts/ViewMode/ViewMode.context";
+import { VIEW_MODES } from "../../contexts/ViewMode/ViewMode.constants";
 import { useInputHandlers } from "../../shared/hooks/useInputHandler";
 import {
   createCard,
@@ -24,6 +27,8 @@ const defaultProps = {
 
 const TaskForm = ({ onClose, taskToEdit }) => {
   const { setShouldGetCards } = useCardsContext();
+  const { viewMode } = useViewModeContext();
+  const isSimpleView = viewMode === VIEW_MODES.SIMPLE;
 
   const isTaskEdited = JSON.stringify(taskToEdit) !== JSON.stringify({});
 
@@ -86,7 +91,12 @@ const TaskForm = ({ onClose, taskToEdit }) => {
         tabIndex="0"
         onClick={onClose}
       />
-      <form action="#" className={styles["new-task"]}>
+      <form
+        action="#"
+        className={classNames(styles["new-task"], {
+          [styles["new-task-simple"]]: isSimpleView,
+        })}
+      >
         <input
           name="task-title"
           type="text"

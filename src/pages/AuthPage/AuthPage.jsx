@@ -2,15 +2,13 @@
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import React from "react";
-import { useSelector } from "react-redux";
 
 import SignUpLink from "./SignUpLink/SignUpLink";
 import AuthForm from "./AuthForm/AuthForm";
 import Info from "./Info/Info";
 import { AUTH_TYPES } from "../../configs/auth";
-import { VIEW_MODES } from "../../features/viewMode/viewMode.constants";
-
-import authPageSelector from "./AuthPage.selector";
+import { VIEW_MODES } from "../../contexts/ViewMode/ViewMode.constants";
+import { useViewModeContext } from "../../contexts/ViewMode/ViewMode.context";
 
 import styles from "./AuthPage.module.scss";
 
@@ -19,7 +17,7 @@ const propTypes = {
 };
 
 const AuthPage = ({ type }) => {
-  const { viewMode } = useSelector(authPageSelector);
+  const { viewMode } = useViewModeContext();
   const isWideView = viewMode === VIEW_MODES.WIDE;
   const isLogin = type === AUTH_TYPES.LOGIN;
 

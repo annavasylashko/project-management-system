@@ -13,13 +13,18 @@
     width: 0;
     height: 0;
   }
-}
 
-.dashboard-list {
-  height: 330px;
-  width: fit-content;
+  &-.dashboard {
+    height: 330px;
+    width: fit-content;
 
-  flex-wrap: nowrap;
-  flex-direction: column;
-  gap: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &-simple {
+    width: 100%;
+    height: fit-content;
+  }
 }

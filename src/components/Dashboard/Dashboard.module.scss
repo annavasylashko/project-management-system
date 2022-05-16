@@ -29,11 +29,21 @@
       }
     }
   }
+
+  &-simple {
+    flex-direction: column;
+
+    height: 70vh;
+
+    .task-type-section {
+      width: 100%;
+    }
+  }
 }
 
 .task-type-section {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   width: 250px;
 
   &-title {
@@ -44,4 +54,12 @@
 
     margin-bottom: 15px;
   }
+}
+
+.arrow {
+  width: 20px;
+  height: 10px;
+
+  margin: auto 0;
+  padding-right: 10px;
 }

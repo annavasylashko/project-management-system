@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import React from "react";
 
-import { VIEW_MODES } from "../../../features/viewMode/viewMode.constants";
+import { VIEW_MODES } from "../../../contexts/ViewMode/ViewMode.constants";
 
 import styles from "./Info.module.scss";
 

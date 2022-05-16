@@ -70,6 +70,14 @@
       background: $content_blue_light;
     }
   }
+
+  &-simple {
+    width: 98%;
+
+    .card-content {
+      width: 94%;
+    }
+  }
 }
 
 .status {

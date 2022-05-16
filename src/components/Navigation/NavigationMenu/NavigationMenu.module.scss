@@ -1,0 +1,23 @@
+@import "../../../styles/colors.scss";
+
+.body {
+  background-color: $surface_secondary;
+}
+
+.navigation {
+  margin: 1vh auto;
+  padding: 10px;
+  padding-right: 0;
+
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  text-align: center;
+}
+
+.items {
+  height: fit-content;
+}

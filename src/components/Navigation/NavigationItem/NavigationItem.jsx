@@ -11,9 +11,14 @@ import styles from "./NavigationItem.module.scss";
 
 const propTypes = {
   task: PropTypes.object.isRequired,
+  closeMenu: PropTypes.func,
 };
 
-const NavigationItem = ({ task }) => {
+const defaultProps = {
+  closeMenu: () => {},
+};
+
+const NavigationItem = ({ task, closeMenu }) => {
   const { location } = useSelector(navigationItemSelector);
   const isActive = location === task.link;
 
@@ -23,6 +28,7 @@ const NavigationItem = ({ task }) => {
       className={classNames(styles.link, {
         [styles.active]: isActive,
       })}
+      onClick={closeMenu}
     >
       <Icon name={task.icon} className={styles["task-img"]} />
       <p>{task.title}</p>
@@ -31,5 +37,6 @@ const NavigationItem = ({ task }) => {
 };
 
 NavigationItem.propTypes = propTypes;
+NavigationItem.defaultProps = defaultProps;
 
 export default NavigationItem;
