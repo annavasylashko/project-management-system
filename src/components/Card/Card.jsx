@@ -3,6 +3,8 @@ import classNames from "classnames";
 import React, { useCallback, useState } from "react";
 
 import TaskForm from "../TaskForm/TaskForm";
+import { useViewModeContext } from "../../contexts/ViewMode/ViewMode.context";
+import { VIEW_MODES } from "../../contexts/ViewMode/ViewMode.constants";
 
 import styles from "./Card.module.scss";
 
@@ -14,6 +16,9 @@ const propTypes = {
 };
 
 const Card = ({ id, title, status, description }) => {
+  const { viewMode } = useViewModeContext();
+  const isSimpleView = viewMode === VIEW_MODES.SIMPLE;
+
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const openForm = useCallback(() => setIsFormVisible(true), []);
@@ -21,7 +26,11 @@ const Card = ({ id, title, status, description }) => {
 
   return (
     <>
-      <div className={styles.card}>
+      <div
+        className={classNames(styles.card, {
+          [styles["card-simple"]]: isSimpleView,
+        })}
+      >
         <div className={styles["card-header"]}>
           <span
             className={classNames(

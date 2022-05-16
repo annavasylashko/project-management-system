@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .card {
   width: 200px;
@@ -68,6 +68,14 @@
 
       border-radius: $round_radius;
       background: $content_blue_light;
+    }
+  }
+
+  &-simple {
+    width: 98%;
+
+    .card-content {
+      width: 94%;
     }
   }
 }

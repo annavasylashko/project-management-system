@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@import "../../styles/colors.scss";
 
 .main-section {
   display: flex;
@@ -11,4 +11,10 @@
   border-radius: 25px;
 
   width: calc(100vw - 260px);
+
+  &-simple {
+    margin: 70px 1vh 10px 1vh;
+    width: 87vw;
+    height: 100%;
+  }
 }

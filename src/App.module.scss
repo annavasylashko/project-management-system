@@ -1,9 +1,11 @@
-@import './styles/colors.scss';
+@import "./styles/colors.scss";
 
 .container {
   display: flex;
   height: 100vh;
   background-color: $surface_primary2;
+
+  overflow: hidden;
 
   user-select: none;
   -moz-user-select: none;
@@ -12,6 +14,11 @@
 
 .with-navigation {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: $surface_secondary;
+
+  &-wide {
+    flex-direction: row;
+  }
 }

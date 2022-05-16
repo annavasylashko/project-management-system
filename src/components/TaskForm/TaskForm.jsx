@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import React, { useMemo } from "react";
 
 import Buttons from "./Buttons/Buttons";
 import StatusOptions from "./StatusOptions/StatusOptions";
-import Input from "../Input/Input";
+import { useViewModeContext } from "../../contexts/ViewMode/ViewMode.context";
+import { VIEW_MODES } from "../../contexts/ViewMode/ViewMode.constants";
 import { useInputHandlers } from "../../shared/hooks/useInputHandler";
 import {
   createCard,
@@ -25,6 +27,8 @@ const defaultProps = {
 
 const TaskForm = ({ onClose, taskToEdit }) => {
   const { setShouldGetCards } = useCardsContext();
+  const { viewMode } = useViewModeContext();
+  const isSimpleView = viewMode === VIEW_MODES.SIMPLE;
 
   const isTaskEdited = JSON.stringify(taskToEdit) !== JSON.stringify({});
 
@@ -61,16 +65,16 @@ const TaskForm = ({ onClose, taskToEdit }) => {
     e.preventDefault();
     isTaskEdited
       ? updateCard({
-        id: taskToEdit.id,
-        title: inputs["task-title"].value,
-        status: inputs["status-option"].value,
-        description: inputs.description.value,
-      })
+          id: taskToEdit.id,
+          title: inputs["task-title"].value,
+          status: inputs["status-option"].value,
+          description: inputs.description.value,
+        })
       : createCard({
-        title: inputs["task-title"].value,
-        status: inputs["status-option"].value,
-        description: inputs.description.value,
-      });
+          title: inputs["task-title"].value,
+          status: inputs["status-option"].value,
+          description: inputs.description.value,
+        });
     handlers();
   };
 
@@ -87,12 +91,18 @@ const TaskForm = ({ onClose, taskToEdit }) => {
         tabIndex="0"
         onClick={onClose}
       />
-      <form action="#" className={styles["new-task"]}>
-        <Input
+      <form
+        action="#"
+        className={classNames(styles["new-task"], {
+          [styles["new-task-simple"]]: isSimpleView,
+        })}
+      >
+        <input
           name="task-title"
+          type="text"
           className={styles["new-task-name"]}
           placeholder="Add new task"
-          inputHandler={inputHandler}
+          onChange={inputHandler}
           value={inputs["task-title"].value}
         />
         <textarea

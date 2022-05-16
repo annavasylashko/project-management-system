@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import React, { useEffect } from "react";
 
 import AddTask from "../../components/AddTask/AddTask";
 import UserHeader from "../../components/UserHeader/UserHeader";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import useBehavior from "../../shared/hooks/useBehavior";
-import contentPageBehavior from "./ContentPage.behavior";
 import { tasksMap } from "../../configs/tasks";
 import CardsProvider from "../../contexts/Cards/Cards.provider";
+import { VIEW_MODES } from "../../contexts/ViewMode/ViewMode.constants";
+import { useViewModeContext } from "../../contexts/ViewMode/ViewMode.context";
+import contentPageBehavior from "./ContentPage.behavior";
 
 import styles from "./ContentPage.module.scss";
 
@@ -21,6 +24,9 @@ const defaultProps = {
 };
 
 const ContentPage = ({ showHeader, title }) => {
+  const { viewMode } = useViewModeContext();
+  const isSimpleView = viewMode === VIEW_MODES.SIMPLE;
+
   const { updateLocationPath } = useBehavior(contentPageBehavior);
   const isUserLoggedIn = localStorage.getItem("token");
 
@@ -36,8 +42,12 @@ const ContentPage = ({ showHeader, title }) => {
 
   return (
     <CardsProvider>
-      <div className={styles["main-section"]}>
-        <UserHeader title={title} />
+      <div
+        className={classNames(styles["main-section"], {
+          [styles["main-section-simple"]]: isSimpleView,
+        })}
+      >
+        <UserHeader title={title} showUser={!isSimpleView} />
         <AddTask />
         <Dashboard
           showHeader={showHeader}

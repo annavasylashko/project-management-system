@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .blocker {
   position: absolute;
@@ -36,6 +36,16 @@
   &-content {
     min-height: 40px;
     height: fit-content;
+  }
+
+  &-simple {
+    left: 0;
+    right: 0;
+    width: 84%;
+
+    .new-task-content {
+      width: 100%;
+    }
   }
 }
 
